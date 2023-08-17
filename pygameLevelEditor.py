@@ -18,9 +18,11 @@ pg.display.set_caption('Level Editor')
 # bg1 = pg.image.load('Images/bg1.png').convert_alpha()
 # bg2 = pg.image.load('Images/bg2.png').convert_alpha()
 bg_sky = pg.image.load('Images/sky.png').convert_alpha()
+bg_mountain = pg.image.load('Images/mountain.png').convert_alpha()
 
 def draw_Background():
     screen.blit(bg_sky,(0,0))
+    screen.blit(bg_mountain,(0,SCREEN_HEIGHT - bg_mountain.get_height()))
 
 while run:
 
