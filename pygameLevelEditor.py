@@ -19,7 +19,7 @@ bg1 = pg.image.load('Images/bg1.png').convert_alpha()
 bg2 = pg.image.load('Images/bg2.png').convert_alpha()
 
 def draw_Background():
-    screen.blit(bg1,(0.0))
+    screen.blit(bg1,(0,0))
 
 while run:
 
