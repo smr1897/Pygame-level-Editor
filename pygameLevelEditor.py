@@ -43,6 +43,12 @@ while run:
                 scroll_left = True
             if event.key == pg.K_RIGHT:
                 scroll_right = True
+
+            if event.type == pg.KEYUP:
+                if event.key == pg.K_LEFT:
+                    scroll_left = False
+                if event.key == pg.K_RIGHT:
+                    scroll_right = False 
  
     pg.display.update()
 
