@@ -14,6 +14,12 @@ screen = pg.display.set_mode((SCREEN_WIDTH + SIDE_MARGIN , SCREEN_HEIGHT + LOWER
 
 pg.display.set_caption('Level Editor')
 
+#Background images scrolling
+scroll_left = False
+scroll_right = False
+scroll = 0
+scroll_speed = 1
+
 #Images
 # bg1 = pg.image.load('Images/bg1.png').convert_alpha()
 # bg2 = pg.image.load('Images/bg2.png').convert_alpha()
