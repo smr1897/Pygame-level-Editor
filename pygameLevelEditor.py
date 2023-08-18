@@ -37,6 +37,12 @@ while run:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             run = False 
+        
+        if event.type == pg.KEYDOWN:
+            if event.key == pg.K_LEFT:
+                scroll_left = True
+            if event.key == pg.K_RIGHT:
+                scroll_right = True
  
     pg.display.update()
 
