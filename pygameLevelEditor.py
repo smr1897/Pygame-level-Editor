@@ -27,12 +27,17 @@ bg_sky = pg.image.load('Images/sky.png').convert_alpha()
 bg_mountain = pg.image.load('Images/mountain.png').convert_alpha()
 
 def draw_Background():
-    screen.blit(bg_sky,(0,0))
-    screen.blit(bg_mountain,(0,SCREEN_HEIGHT - bg_mountain.get_height()))
+    screen.blit(bg_sky,(-scroll,0))
+    screen.blit(bg_mountain,(-scroll,SCREEN_HEIGHT - bg_mountain.get_height()))
 
 while run:
 
     draw_Background()
+
+    if scroll_left == True:
+        scroll -= 5
+    if scroll_right == True:
+        scroll += 5
 
     for event in pg.event.get():
         if event.type == pg.QUIT:
