@@ -30,9 +30,13 @@ RED = (200,0,0)
 bg_sky = pg.image.load('Images/sky.png').convert_alpha()
 bg_mountain = pg.image.load('Images/mountain.png').convert_alpha()
 
+
 def draw_Background():
-    screen.blit(bg_sky,(-scroll,0))
-    screen.blit(bg_mountain,(-scroll,SCREEN_HEIGHT - bg_mountain.get_height()))
+    screen.fill(GREEN)
+    width = bg_sky.get_width()
+    for x in range(4):
+        screen.blit(bg_sky,((width*x)-scroll,0))
+        screen.blit(bg_mountain,((width*x)-scroll,SCREEN_HEIGHT - bg_mountain.get_height()))
 
 while run:
 
