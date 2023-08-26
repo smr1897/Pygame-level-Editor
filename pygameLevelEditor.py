@@ -20,6 +20,10 @@ scroll_right = False
 scroll = 0
 scroll_speed = 1
 
+GREEN = (144,201,120)
+WHITE = (255,255,255)
+RED = (200,0,0)
+
 #Images
 # bg1 = pg.image.load('Images/bg1.png').convert_alpha()
 # bg2 = pg.image.load('Images/bg2.png').convert_alpha()
