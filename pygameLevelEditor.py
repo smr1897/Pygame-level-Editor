@@ -8,6 +8,9 @@ SCREEN_HEIGHT = 600
 LOWER_MARGIN = 100
 SIDE_MARGIN = 300
 
+FPS = 60
+CLOCK = pg.time.Clock()
+
 run = True
 
 screen = pg.display.set_mode((SCREEN_WIDTH + SIDE_MARGIN , SCREEN_HEIGHT + LOWER_MARGIN))
@@ -35,17 +38,19 @@ def draw_Background():
     screen.fill(GREEN)
     width = bg_sky.get_width()
     for x in range(4):
-        screen.blit(bg_sky,((width*x)-scroll,0))
-        screen.blit(bg_mountain,((width*x)-scroll,SCREEN_HEIGHT - bg_mountain.get_height()))
+        screen.blit(bg_sky,((width*x)-scroll * 0.5,0))
+        screen.blit(bg_mountain,((width*x)-scroll * 0.6,SCREEN_HEIGHT - bg_mountain.get_height()))
 
 while run:
+
+    CLOCK.tick(FPS) 
 
     draw_Background()
 
     if scroll_left == True:
-        scroll -= 5
+        scroll -= 5 * scroll_speed
     if scroll_right == True:
-        scroll += 5
+        scroll += 5 * scroll_speed
 
     for event in pg.event.get():
         if event.type == pg.QUIT:
@@ -56,12 +61,16 @@ while run:
                 scroll_left = True
             if event.key == pg.K_RIGHT:
                 scroll_right = True
+            if event.key == pg.K_RSHIFT:
+                scroll_speed = 5
 
             if event.type == pg.KEYUP:
                 if event.key == pg.K_LEFT:
                     scroll_left = False
                 if event.key == pg.K_RIGHT:
-                    scroll_right = False 
+                    scroll_right = False
+                if event.key == pg.K_RSHIFT:
+                    scroll_speed = 1 
  
     pg.display.update()
 
