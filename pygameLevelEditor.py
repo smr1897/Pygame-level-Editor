@@ -47,7 +47,7 @@ while run:
 
     draw_Background()
 
-    if scroll_left == True:
+    if scroll_left == True and scroll > 0:
         scroll -= 5 * scroll_speed
     if scroll_right == True:
         scroll += 5 * scroll_speed
